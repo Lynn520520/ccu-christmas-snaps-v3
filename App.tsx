@@ -188,16 +188,16 @@ export default function App() {
 
         {/* Input */}
         <div className="w-full max-w-[220px] mb-6 relative z-30">
-           <div className="relative">
-              <div className="absolute top-3 left-3 flex items-start pointer-events-none">
-                <User size={14} className="text-slate-400" />
+           <div className="relative group">
+              <div className="absolute top-3 left-3 flex items-start pointer-events-none z-10">
+                <User size={14} className="text-slate-500" />
               </div>
               <textarea
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 placeholder="Enter English Name"
                 rows={2}
-                className="block w-full pl-9 pr-3 py-2 bg-orange-50 border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-200 focus:bg-white text-sm font-bold transition-all resize-none overflow-hidden leading-tight"
+                className={`block w-full pl-9 pr-3 py-2 bg-orange-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-red-200 focus:bg-white text-sm font-bold transition-all resize-none overflow-hidden leading-tight ${!userName ? 'animate-input-attention' : ''}`}
                 style={{ minHeight: '42px' }}
               />
            </div>

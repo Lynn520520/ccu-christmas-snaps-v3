@@ -186,9 +186,10 @@ export default function App() {
              </div>
         </div>
 
-        {/* Input */}
+        {/* Input - UPDATED WITH RAINBOW WRAPPER LOGIC */}
         <div className="w-full max-w-[220px] mb-6 relative z-30">
-           <div className="relative group">
+           {/* If user name is empty, we apply the rainbow-border-wrapper class which adds the spinning neon background */}
+           <div className={`relative group rounded-lg ${!userName ? 'rainbow-border-wrapper' : ''}`}>
               <div className="absolute top-3 left-3 flex items-start pointer-events-none z-10">
                 <User size={14} className="text-slate-500" />
               </div>
@@ -197,7 +198,7 @@ export default function App() {
                 onChange={(e) => setUserName(e.target.value)}
                 placeholder="Enter English Name"
                 rows={2}
-                className={`block w-full pl-9 pr-3 py-2 bg-orange-50 border border-slate-300 rounded-lg text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-red-200 focus:bg-white text-sm font-bold transition-all resize-none overflow-hidden leading-tight ${!userName ? 'animate-input-attention' : ''}`}
+                className={`block w-full pl-9 pr-3 py-2 rounded-lg text-slate-800 placeholder-slate-500 text-sm font-bold transition-all resize-none overflow-hidden leading-tight outline-none ${!userName ? 'border-0 bg-white' : 'bg-orange-50 border border-slate-300 focus:ring-2 focus:ring-red-200 focus:bg-white'}`}
                 style={{ minHeight: '42px' }}
               />
            </div>
